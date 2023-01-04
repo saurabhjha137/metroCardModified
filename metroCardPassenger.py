@@ -15,7 +15,7 @@ def reduce_fare(fare) :
 class MetroCardPassenger :
     def __init__(self, passengerID, passengerBalance, returnJourney = False):
         self.passengerID = passengerID
-        self.passengerBalance =  passengerBalance
+        self.passengerBalance = passengerBalance
         self.returnJourney = returnJourney
         
     def get_passenger_id (self) :
@@ -51,7 +51,7 @@ class MetroCardPassenger :
         
     #checking if Passenger Having Enough balance to travel
     def check_balance_and_deduct(self, fare , collectionSummary) :
-        if  self.get_passenger_balance() >= fare :
+        if self.get_passenger_balance() >= fare :
             self.deduct_passenger_balance(fare, self.get_passenger_balance(), collectionSummary)
         else :
             self.deduct_service_charge_and_passenger_balance(fare, self.get_passenger_balance(), collectionSummary)
@@ -65,7 +65,7 @@ class MetroCardPassenger :
     def deduct_for_one_way_journey(self, actualTravelFare, collectionSummary) :
         self.check_balance_and_deduct(actualTravelFare, collectionSummary)
 
-    def deduct_travel_charges(self,  travelFare, collectionSummary) :   
+    def deduct_travel_charges(self, travelFare, collectionSummary) :   
         #if passenger doing OneWay Journey
         if not self.is_return_journey() :
             self.deduct_for_one_way_journey(travelFare, collectionSummary)
