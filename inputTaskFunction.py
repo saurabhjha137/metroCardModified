@@ -1,4 +1,4 @@
-from metroPassengersCopy import MetroCardPassenger
+from metroCardPassenger import MetroCardPassenger
 
 class InputTask :
 
